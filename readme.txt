@@ -1,10 +1,10 @@
-=== DirtySuds - Kill Howdy ===
-Contributors: pathawks
+=== Kill Howdy ===
+Contributors: dirtysuds,pathawks
 Donate link: http://www.pathawks.com/p/wordpress-plugins.html
-Tags: plugins, wordpress, admin, howdy, hello dolly, novelty
+Tags: plugins, wordpress, admin, howdy, hello dolly, novelty, greeting
 Requires at least: 2.7
 Tested up to: 3.1
-Stable tag: 1.00
+Stable tag: 1.01
 
 Changes the text **Howdy** in the admin interface to a different greeting.
 
@@ -36,6 +36,9 @@ kill-howdy@pathawks.com
 
 
 == Changelog ==
+
+= 1.01 201100315 =
+* Moved `$greetings` to `greetings.txt`
 
 = 1.00 201100303 =
 * First version
