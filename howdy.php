@@ -4,7 +4,7 @@ Plugin Name: DirtySuds - Kill Howdy
 Plugin URI: http://dirtysuds.com
 Description: Changes 'Howdy' to something else
 Author: Pat Hawks
-Version: 1.01
+Version: 1.02
 Author URI: http://www.pathawks.com
 
 Updates:

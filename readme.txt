@@ -32,7 +32,7 @@ kill-howdy@pathawks.com
 
 == Changelog ==
 
-= 1.02 20120103 =
+= 1.02 20130103 =
 * Now works with Admin Bar
 * Change greeting each day rather than each page load
 * Cache the greeting of the day, for slightly faster loading
