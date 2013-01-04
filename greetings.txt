@@ -1,10 +1,10 @@
 Hey,
 A-yo,
-Holla!
+Holla at
 G'day
 Aloha
-Sup?
-What's clickin?
-What's crackin'?
-What's poppin?
+Sup,
+What's clickin', %1$s?
+What's crackin', %1$s?
+What's poppin', %1$s?
 Hello, Your Majesty,

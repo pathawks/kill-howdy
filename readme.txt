@@ -2,9 +2,9 @@
 Contributors: dirtysuds,pathawks
 Donate link: http://www.pathawks.com/p/wordpress-plugins.html
 Tags: plugins, wordpress, admin, howdy, hello dolly, novelty, greeting
-Requires at least: 2.7
-Tested up to: 3.1
-Stable tag: 1.01
+Requires at least: 2.8
+Tested up to: 3.6
+Stable tag: 1.02
 
 Changes the text **Howdy** in the admin interface to a different greeting.
 
@@ -24,11 +24,6 @@ After I stopped laughing and picked myself up off the floor, I coded this plugin
 
 == Frequently Asked Questions ==
 
-= What languages are supported? =
-
-English. I don't think this plugin would scale internationally very well.
-
-
 = I have an idea for a new message to display =
 
 Great! I'd love to hear from you.
@@ -37,9 +32,14 @@ kill-howdy@pathawks.com
 
 == Changelog ==
 
-= 1.01 201100315 =
+= 1.02 20120103 =
+* Now works with Admin Bar
+* Change greeting each day rather than each page load
+* Cache the greeting of the day, for slightly faster loading
+
+= 1.01 20110315 =
 * Moved `$greetings` to `greetings.txt`
 
-= 1.00 201100303 =
+= 1.00 20110303 =
 * First version
 * Works

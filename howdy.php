@@ -8,6 +8,7 @@ Version: 1.01
 Author URI: http://www.pathawks.com
 
 Updates:
+1.02 - Now works with Admin Bar
 1.01 - Moved Greetings to greetings.txt
 1.00 - First Version
 
@@ -28,18 +29,33 @@ Updates:
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-add_filter('admin_user_info_links', 'dirtysuds_howdy');
-add_filter('plugin_row_meta', 'dirtysuds_howdy_rate',10,2);
+add_filter( 'gettext', 'dirtysuds_howdy', 10, 3 );
+add_filter( 'plugin_row_meta', 'dirtysuds_howdy_rate', 10, 2 );
 
+function dirtysuds_howdy( $translated_text, $untranslated_text, $domain ) {
+	if ( $untranslated_text === 'Howdy, %1$s' ) {
+	
+		if ( $dirtysuds_howdy_text = get_transient( 'dirtysuds_howdy' ) )
+			return $dirtysuds_howdy_text;
 
-function dirtysuds_howdy( $links ) {
+		$greeting = file_get_contents( plugin_dir_path(__FILE__) .'greetings.txt' );
+		$greeting = explode("\n", $greeting);
+		
+		srand( crc32( date( 'dmo' ) ) ); // Let's set the random greeting based on todays date, for a new greeting every day
+		$greeting = wptexturize( $greeting[ rand(0, count($greeting) - 1) ] );
+		srand();
 
-	$greeting = file_get_contents(WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),"",plugin_basename(__FILE__)).'/greetings.txt' );
-	$greeting = explode("\n", $greeting);
-	$greeting = wptexturize( $greeting[ mt_rand(0, count($greeting) - 1) ] );
+		if ( strpos( $greeting, '%1$s' ) !== false ) {
+			set_transient( 'dirtysuds_howdy_rate', $greeting, 3600 );
+			return $greeting;
+		} else {
+			set_transient( 'dirtysuds_howdy_rate', $greeting.' %1$s', 3600 );
+			return $greeting.' %1$s';
+		}
 
-	$links[5] = str_replace('Howdy,',$greeting,$links[5]);
-	return $links;
+	}
+
+	return $translated_text;
 }
 
 function dirtysuds_howdy_rate($links,$file) {
