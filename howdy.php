@@ -1,18 +1,14 @@
 <?php
 /*
-Plugin Name: DirtySuds - Kill Howdy
-Plugin URI: http://dirtysuds.com
+Plugin Name: Kill Howdy
+Plugin URI: https://github.com/pathawks/kill-howdy
 Description: Changes 'Howdy' to something else
 Author: Pat Hawks
+Author URI: http://pathawks.com
+License: GPL2
 Version: 1.02
-Author URI: http://www.pathawks.com
 
-Updates:
-1.02 - Now works with Admin Bar
-1.01 - Moved Greetings to greetings.txt
-1.00 - First Version
-
-  Copyright 2011 Pat Hawks  (email : pat@pathawks.com)
+  Copyright 2014 Pat Hawks  (email : pat@pathawks.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -34,13 +30,13 @@ add_filter( 'plugin_row_meta', 'dirtysuds_howdy_rate', 10, 2 );
 
 function dirtysuds_howdy( $translated_text, $untranslated_text, $domain ) {
 	if ( $untranslated_text === 'Howdy, %1$s' ) {
-	
+
 		if ( $dirtysuds_howdy_text = get_transient( 'dirtysuds_howdy' ) )
 			return $dirtysuds_howdy_text;
 
 		$greeting = file_get_contents( plugin_dir_path(__FILE__) .'greetings.txt' );
 		$greeting = explode("\n", $greeting);
-		
+
 		srand( crc32( date( 'dmo' ) ) ); // Let's set the random greeting based on todays date, for a new greeting every day
 		$greeting = wptexturize( $greeting[ rand(0, count($greeting) - 1) ] );
 		srand();
