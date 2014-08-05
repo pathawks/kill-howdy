@@ -1,6 +1,6 @@
 === Kill Howdy ===
-Contributors: dirtysuds,pathawks
-Donate link: http://www.pathawks.com/p/wordpress-plugins.html
+Contributors: pathawks,dirtysuds
+Donate link: https://github.com/pathawks/kill-howdy
 Tags: plugins, wordpress, admin, howdy, hello dolly, novelty, greeting
 Requires at least: 2.8
 Tested up to: 3.6
