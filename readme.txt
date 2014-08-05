@@ -3,7 +3,7 @@ Contributors: pathawks,dirtysuds
 Donate link: https://github.com/pathawks/kill-howdy
 Tags: plugins, wordpress, admin, howdy, hello dolly, novelty, greeting
 Requires at least: 2.8
-Tested up to: 3.6
+Tested up to: 3.9.1
 Stable tag: 1.02
 
 Changes the text **Howdy** in the admin interface to a different greeting.
