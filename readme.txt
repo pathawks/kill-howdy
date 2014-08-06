@@ -2,6 +2,8 @@
 Contributors: pathawks,dirtysuds
 Donate link: https://github.com/pathawks/kill-howdy
 Tags: plugins, wordpress, admin, howdy, hello dolly, novelty, greeting
+License: GPLv2
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 2.8
 Tested up to: 3.9.1
 Stable tag: 1.02
